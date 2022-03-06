@@ -46,4 +46,50 @@ Java NIO is recomanded for:
 -  when working with file system (create, delete, move files or folders)  
 
 Tips  
-For FileSistems use NIO, for reading and writing file contents use IO.
+For FileSistems use NIO, for reading and writing file contents use IO.  
+
+
+**Theory notes**
+
+#### IO
+IO can be performed using streams(character and binary) – process one character or byte at a time  
+-  byte stream (binary data)	-  for obj., program variables or classes, etc.  
+-  character data 		–  for spreadsheet, XML, JSON, etc.
+
+Types of files:  
+-  Serial(sequential) files 	– stream of data in order   
+-  Random access files	- apply to files that allow jumping within the file retrieving or overwriting any data. Need some sort of index showing where a particular record is within the file.  
+
+**Character data**
+File reader  - read one character at a time
+Buffer Reader reads more characters and buffers the character into a character array. Will use in general a File Reader because reduce access time.
+File reader vs Buffer reader: File Reader reads directly from the disk while the Buffer loads a larger part of the file and then reads it (more efficient);
+
+
+File Writer
+Buffer Writer – File Writer puts data into the Buffer and the Buffer writes data when is full. Prevents writing a small amount of data into the disk.
+
+To get data from the file you can use Scanner with File Reader, or Buffer Reader.
+
+**Byte Stream(Binary Data)**
+	File Input Stream and File Output Stream instead of File Reader and File Writer.
+	Buffer Input Stream and Buffer Output Stream.
+	Data Input Stream and Data Output Stream: java classes that deals with bytes.
+	
+**Serialization**
+Serialization = process to transform an object into a form that can be stored and recreated.
+ 	Object Input Stream and Object Output Stream to read and write objects.
+	We have to make the class serializable  - implement the Serializable Interface
+When you want an object to be serializable all its fields should be serializable.
+	It is recommended to declare a private long field called serial version UID.
+	
+**Random Access File**
+	File Pointer is an offset in the file where the next read or write starts from.
+	Offset is the byte location in the file.
+Record = each set of related data (first name, last name, id make up the record for customer).
+Index holds the offset and length of the record.
+
+With Random Access File we can not read-write objects.
+We do not use Buffer to access randomly because buffer is like a queue is sequential.
+
+

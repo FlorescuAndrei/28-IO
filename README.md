@@ -147,7 +147,7 @@ Pipes have two channels
 Paths, Copy, Move, Rename, Delete, Create, File Attributes, Read Existing Directory Content, Separator and Temp Files, Walk File Tree.
 
 Symbolic Links example: desktop shortcut on windows.  
-File Stores:  on windows: the drives: C:, D:
+File Stores:  on windows: the drives: C:, D:  
 Glob: – Is a filter to show a specific type of file when serching the tree, similar to a regular expression.
 
 Path NIO <=> File IO

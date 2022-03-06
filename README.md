@@ -90,6 +90,80 @@ Record = each set of related data (first name, last name, id make up the record 
 Index holds the offset and length of the record.
 
 With Random Access File we can not read-write objects.  
-We do not use Buffer to access randomly because buffer is like a queue is sequential.
+We do not use Buffer to access randomly because buffer is like a queue is sequential.  
+
+
+### NIO  
+
+NIO  the java.nio classes fall into two buckets:   
+-  those that deal with the file system  
+-  those that deal with reading and writing
+
+Java NIO is recomanded for:  
+- large applications that use multiple threads  
+- when working with file system (create, delete, move files or folders)  
+
+
+**Reading and Writing**  
+
+-  Channel: data source you reading from or writing to (ex: a file).   
+-  Buffer: container for the block of data that you want to read or write.  
+-  Selectors allow a single thread to manage the I/O for multiple channels. In large enterprise app, not use in current project.
+
+Buffer 
+-  capacity = number of elements it can contain;  
+-  position = index of the next element that can be read or written  
+-  mark – is used by the reset() method – reset the position to the mark;  
+
+Position : 
+-  buffer position(position in buffer) 
+-  file position(position in file)
+
+Position in the file  = channel position.
+Examples of setting channel position  
+- channel.position(0) 
+- channel.read(buffer, 0); -> set channel(file)position to 0;  
+
+Position in the buffer 
+-  flip() method reset the buffer position .  Always use flip() the buffer when passing from read to write and vice-versa
+-  intBuffer.getInt(0) -> position 0 in the buffer  = ABSOLUT READ; -> the buffer position is not changed after exectuion
+-  intBuffer.getInt() = RELATIVE READ -> buffer position is changed after execution and we must use flip() to go back;
+
+
+
+Random Access way java NIO  
+-  Random Access Files from Java IO  
+-  Seekable byte channel interface.  Has the notion of the current position.(ex: channel.position(10)) 
+
+**Threads**  
+Sending data from one thread to another using  java NIO Pips.  
+Pipes are used to transfer data between threads. One way connection so data can flow one way.  
+Pipes have two channels  
+-  Sync channel: one or more threads can write to the sync channel.  
+-  Source channel: other thread or threads read from the source channel.
+
+**File System**  
+
+Copy one file to another  
+- A)	Use methods from java.nio.channels.FileChannel class, if you have one of the files open (in the channel), using transferFrom() or transferTo() is more efficient.Good for **open files**.
+- B)	Use method from java.nio.file  package. Most commonly used
+
+
+Path  can be Absolute  or Relative. Attention You can create paths to files that do not exist, better to check if exist.  
+
+Copy. Move. Rename. Delete. Create.  
+File Attributes (Metadata): size, last modified time, time created, etc…  
+Directory content.  
+Glob: “*.txt” – Is a filter to show a specific type of file, similar to a regular expression.  
+File.separator : Windows  \, Unix   /.  
+Temp File  
+Walk File Tree – view all files and subdirectories. Use  FileVisitor 
+
+Symbolic Links example: desktop shortcut on windows.  
+File Stores:  on windows: the drives: C:, D:
+
+Path NIO <=> File IO
+
+[BACK TO START PAGE](https://github.com/FlorescuAndrei/Start.git)
 
 

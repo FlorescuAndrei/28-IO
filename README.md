@@ -142,22 +142,9 @@ Pipes have two channels
 -  Sync channel: one or more threads can write to the sync channel.  
 -  Source channel: other thread or threads read from the source channel.
 
-**File System**  
+**File System**    
 
-Copy one file to another  
-- A)	Use methods from java.nio.channels.FileChannel class, if you have one of the files open (in the channel), using transferFrom() or transferTo() is more efficient.Good for **open files**.
-- B)	Use method from java.nio.file  package. Most commonly used
-
-
-Path  can be Absolute  or Relative. Attention You can create paths to files that do not exist, better to check if exist.  
-
-Copy. Move. Rename. Delete. Create.  
-File Attributes (Metadata): size, last modified time, time created, etc…  
-Directory content.  
-Glob: “*.txt” – Is a filter to show a specific type of file, similar to a regular expression.  
-File.separator : Windows  \, Unix   /.  
-Temp File  
-Walk File Tree – view all files and subdirectories. Use  FileVisitor 
+Paths, Copy, Move, Rename, Delete, Create, File Attributes, Read Existing Directory Content, Separator and Temp Files, Walk File Tree.
 
 Symbolic Links example: desktop shortcut on windows.  
 File Stores:  on windows: the drives: C:, D:

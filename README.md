@@ -49,7 +49,7 @@ Tips
 For FileSistems use NIO, for reading and writing file contents use IO.  
 
 
->**Theory notes**
+## Theory notes
 
 ### IO
 IO can be performed using streams(character and binary) – process one character or byte at a time  

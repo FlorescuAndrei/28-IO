@@ -32,8 +32,6 @@ Use Java NIO Classes to create commonly used Java IO Streams
 
 **IO vs NIO**
 
-Dillinger is currently extended with the following plugins.
-Instructions on how to use them in your own application are linked below.
 
 | IO | NIO |
 | ------ | ------ |

@@ -48,6 +48,8 @@ Java NIO is recomanded for:
 Tips  
 For FileSistems use NIO, for reading and writing file contents use IO.  
 
+[BACK TO START PAGE](https://github.com/FlorescuAndrei/Start.git)
+
 
 ## Theory notes
 

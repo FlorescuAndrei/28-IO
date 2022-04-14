@@ -133,7 +133,7 @@ Position in the buffer
 
 
 
-Random Access way java NIO  
+Random Access with java NIO  
 -  Random Access Files from Java IO  
 -  Seekable byte channel interface.  Has the notion of the current position.(ex: channel.position(10)) 
 
